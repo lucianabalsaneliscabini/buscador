@@ -4,7 +4,7 @@ from utilities import titulo, loading
 
 titulo('BUSCADOR.br')
 
-# [ESTRUTURA DE REPETIÇÃO POR TESTE LÓGICO] - Análise do preenchimento da variável "site" pelo usuário
+
 while True:
     site = str(input('\nQual site você deseja acessar? '))
     if site == '':
@@ -13,7 +13,7 @@ while True:
         loading('\033[33mBUSCANDO \033[m')
         break
 
-# [ESTRUTURA CONDICIONAL] - Causo o URL esteja inconsistente a estrutura irá completar o URL 
+
 
 http = ''
 
@@ -33,7 +33,7 @@ if not 'http://' in site and not 'https://' in site:
 else:
     http = site
 
-# [Tratamento de erro] - Causo o URL não seja encontrado
+
 try:
     urllib.request.urlopen(http)
 except urllib.error.URLError:
@@ -46,7 +46,7 @@ else:
     print('\n\033[32mO SITE ESTÁ DISPONÍVEL :)\033[m\n')
     print('[ 1 ] ABRIR')
     print('[ 2 ] SAIR DO PROGRAMA\n')
-    # [ESTRUTURA DE REPETIÇÃO POR TESTE LÓGICO] - Análise do preenchimento da variável "resposta" pelo usuário
+    
     while True:
         resposta = int(input('OPÇÃO: '))
         if resposta == 1:
